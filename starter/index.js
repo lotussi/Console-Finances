@@ -173,21 +173,21 @@ for (var i = 0; i < finances.length; i++) {
 console.log("Greatest increase in profits: " + greatestIncrease + " (" + greatestIncreaseDate + ")");
 
 //The greatest decrease in losses (date and amount) over the entire period.  
-var greatestDecrease = 0;
-var greatestDecreaseDate = "";
+var greatestLossDecrease = 0;
+var greatestLossDecreaseDate = "";
 
 for (var i = 0; i < finances.length; i++) {
 if (i === 0) continue;
 var currentLoss = finances[i][1];
 var previousLoss = finances[i - 1][1]
-var decrease = currentLoss - previousLoss;
+var lossDecrease = previousLoss - currentLoss;
 
-if (decrease < greatestDecrease) {
-  greatestLoss = decrease;
-  greatestDecreaseDate = finances[i][0];
+if (lossDecrease > greatestLossDecrease) {
+  greatestLossDecrease = lossDecrease;
+  greatestLossDecreaseDate = finances[i][0];
+ }
 }
-}
-console.log("Greatest decrease in profits: " + greatestDecrease + " (" + greatestDecreaseDate + ")");
+console.log("Greatest decrease in losses: " + greatestLossDecrease + " (" + greatestLossDecreaseDate + ")");
 
 
 // const startDate = new Date(2010, 1, 1); //jan 1st 2010
