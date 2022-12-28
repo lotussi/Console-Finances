@@ -170,7 +170,7 @@ for (var i = 0; i < finances.length; i++) {
   }
 }
 
-console.log("Greatest increase in profits: " + greatestIncrease + " (" + greatestIncreaseDate + ")");
+console.log("Greatest increase in profits: ", "$" + greatestIncrease + " (" + greatestIncreaseDate + ")");
 
 //The greatest decrease in losses (date and amount) over the entire period.  
 var greatestLossDecrease = 0;
@@ -187,7 +187,7 @@ if (lossDecrease > greatestLossDecrease) {
   greatestLossDecreaseDate = finances[i][0];
  }
 }
-console.log("Greatest decrease in losses: " + greatestLossDecrease + " (" + greatestLossDecreaseDate + ")");
+console.log("Greatest decrease in losses: ", "$" + greatestLossDecrease + " (" + greatestLossDecreaseDate + ")");
 
 
 // const startDate = new Date(2010, 1, 1); //jan 1st 2010
