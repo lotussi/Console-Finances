@@ -176,17 +176,18 @@ console.log("Greatest increase in profits: " + greatestIncrease + " (" + greates
 var greatestDecrease = 0;
 var greatestDecreaseDate = "";
 
-for (var i = 0; i < finances.length; i++); {
-
+for (var i = 0; i < finances.length; i++) {
+if (i === 0) continue;
 var currentLoss = finances[i][1];
 var previousLoss = finances[i - 1][1]
 var decrease = currentLoss - previousLoss;
 
-if (decrease < greatestLoss) {
+if (decrease < greatestDecrease) {
   greatestLoss = decrease;
   greatestDecreaseDate = finances[i][0];
 }
 }
+console.log("Greatest decrease in profits: " + greatestDecrease + " (" + greatestDecreaseDate + ")");
 
 
 // const startDate = new Date(2010, 1, 1); //jan 1st 2010
