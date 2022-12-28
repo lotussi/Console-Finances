@@ -153,6 +153,40 @@ for (var i = 1; i < finances.length; i++) {
 var averageOfChanges = totalOfChanges / finances.length
 
 console.log("Average Change: ", "$"+averageOfChanges.toFixed(2));
+var currentNestedArray = finances[i]
+  //The greatest increase in profits (date and amount) over the entire period.
+var greatestIncrease = 0;
+var greatestIncreaseDate = "";
+
+for (var i = 0; i < finances.length; i++) {
+  if (i === 0) continue;
+  var currentProfit = finances[i][1];
+  var previousProfit = finances[i - 1][1];
+  var increase = currentProfit - previousProfit;
+  
+  if (increase > greatestIncrease) {
+    greatestIncrease = increase;
+    greatestIncreaseDate = finances[i][0];
+  }
+}
+
+console.log("Greatest increase in profits: " + greatestIncrease + " (" + greatestIncreaseDate + ")");
+
+//The greatest decrease in losses (date and amount) over the entire period.  
+var greatestDecrease = 0;
+var greatestDecreaseDate = "";
+
+for (var i = 0; i < finances.length; i++); {
+
+var currentLoss = finances[i][1];
+var previousLoss = finances[i - 1][1]
+var decrease = currentLoss - previousLoss;
+
+if (decrease < greatestLoss) {
+  greatestLoss = decrease;
+  greatestDecreaseDate = finances[i][0];
+}
+}
 
 
 // const startDate = new Date(2010, 1, 1); //jan 1st 2010
@@ -160,7 +194,7 @@ console.log("Average Change: ", "$"+averageOfChanges.toFixed(2));
 // const monthDiff = endDate.getMonth() -startDate.getMonth() + 
 // (12 *(endDate.getFullYear()));
 // The net total amount of  Profit/Losses over the entire period.
-
+ 
 
 
 //the average of the changes in profit/loses over the entire period.
