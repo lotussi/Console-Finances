@@ -121,13 +121,13 @@ console.log("Total Months: ", finances.length);
 var totalSum = 0
 
 for (var i = 0; i < finances.length; i++) {
-    // when i=0, this is equal to ['Jan-2010', 867884]
+  
     var currentNestedArray = finances[i]
-    // currentNestedArray is equal to ['Jan-2010', 867884]
+    
     var dateOfNestedArray = currentNestedArray[0]
-    // dateOfNestedArray is equal to 'Jan-2010'
+    
     var profitLossOfNestedArray = currentNestedArray[1]
-    // profitLossOfNestedArray is equal to 867884
+    
 
     //totalSum += profitLossOfNestedArray
     totalSum = totalSum + profitLossOfNestedArray
@@ -150,7 +150,7 @@ for (var i = 1; i < finances.length; i++) {
     totalOfChanges += changeInProfit
 }
 
-var averageOfChanges = totalOfChanges / finances.length
+var averageOfChanges = totalOfChanges / (finances.length - 1)
 
 console.log("Average Change: ", "$"+averageOfChanges.toFixed(2));
 var currentNestedArray = finances[i]
